@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55E0291F1435D1AC8635D3B5 /* Pods_The_Games__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220546176F5B8698EDA41F93 /* Pods_The_Games__iOS_.framework */; };
 		7A7CAE6B26C41DA90021A438 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CAE6A26C41DA90021A438 /* Tests_iOS.swift */; };
 		7A7CAE7626C41DA90021A438 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CAE7526C41DA90021A438 /* Tests_macOS.swift */; };
 		7A7CAE7826C41DA90021A438 /* The_GamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CAE4F26C41DA70021A438 /* The_GamesApp.swift */; };
@@ -15,6 +16,7 @@
 		7A7CAE7B26C41DA90021A438 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CAE5026C41DA70021A438 /* ContentView.swift */; };
 		7A7CAE7C26C41DA90021A438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CAE5126C41DA90021A438 /* Assets.xcassets */; };
 		7A7CAE7D26C41DA90021A438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CAE5126C41DA90021A438 /* Assets.xcassets */; };
+		DF0F7870FE61CF5C86AD2E9C /* Pods_The_Games__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051D30D4A367B2B19FFC4964 /* Pods-The Games (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Games (iOS).release.xcconfig"; path = "Target Support Files/Pods-The Games (iOS)/Pods-The Games (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		0FBE718AFF4D9771F189A6F2 /* Pods-The Games (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Games (macOS).debug.xcconfig"; path = "Target Support Files/Pods-The Games (macOS)/Pods-The Games (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		220546176F5B8698EDA41F93 /* Pods_The_Games__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Games__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E01772C0A55091EB788BAB /* Pods-The Games (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Games (macOS).release.xcconfig"; path = "Target Support Files/Pods-The Games (macOS)/Pods-The Games (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		75CB52DC5BB6CA695D273250 /* Pods-The Games (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Games (iOS).debug.xcconfig"; path = "Target Support Files/Pods-The Games (iOS)/Pods-The Games (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		7A7CAE4F26C41DA70021A438 /* The_GamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_GamesApp.swift; sourceTree = "<group>"; };
 		7A7CAE5026C41DA70021A438 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7A7CAE5126C41DA90021A438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 		7A7CAE7126C41DA90021A438 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7CAE7526C41DA90021A438 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		7A7CAE7726C41DA90021A438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Games__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E0291F1435D1AC8635D3B5 /* Pods_The_Games__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0F7870FE61CF5C86AD2E9C /* Pods_The_Games__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FBD99C8782174AA7275956B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				220546176F5B8698EDA41F93 /* Pods_The_Games__iOS_.framework */,
+				7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E4B28194FADB9B62DC2793B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75CB52DC5BB6CA695D273250 /* Pods-The Games (iOS).debug.xcconfig */,
+				051D30D4A367B2B19FFC4964 /* Pods-The Games (iOS).release.xcconfig */,
+				0FBE718AFF4D9771F189A6F2 /* Pods-The Games (macOS).debug.xcconfig */,
+				24E01772C0A55091EB788BAB /* Pods-The Games (macOS).release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A7CAE4926C41DA70021A438 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +123,8 @@
 				7A7CAE6926C41DA90021A438 /* Tests iOS */,
 				7A7CAE7426C41DA90021A438 /* Tests macOS */,
 				7A7CAE5726C41DA90021A438 /* Products */,
+				5E4B28194FADB9B62DC2793B /* Pods */,
+				3FBD99C8782174AA7275956B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A7CAE8026C41DA90021A438 /* Build configuration list for PBXNativeTarget "The Games (iOS)" */;
 			buildPhases = (
+				B94D0C1F9759B45059CA5E38 /* [CP] Check Pods Manifest.lock */,
 				7A7CAE5226C41DA90021A438 /* Sources */,
 				7A7CAE5326C41DA90021A438 /* Frameworks */,
 				7A7CAE5426C41DA90021A438 /* Resources */,
@@ -175,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A7CAE8326C41DA90021A438 /* Build configuration list for PBXNativeTarget "The Games (macOS)" */;
 			buildPhases = (
+				5F9D3BBE41D75DE5B8CA86B3 /* [CP] Check Pods Manifest.lock */,
 				7A7CAE5A26C41DA90021A438 /* Sources */,
 				7A7CAE5B26C41DA90021A438 /* Frameworks */,
 				7A7CAE5C26C41DA90021A438 /* Resources */,
+				A7EBFE6710300B05987F6301 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +338,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F9D3BBE41D75DE5B8CA86B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The Games (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7EBFE6710300B05987F6301 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Games (macOS)/Pods-The Games (macOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-The Games (macOS)/Pods-The Games (macOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-The Games (macOS)/Pods-The Games (macOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B94D0C1F9759B45059CA5E38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-The Games (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A7CAE5226C41DA90021A438 /* Sources */ = {
@@ -467,6 +567,7 @@
 		};
 		7A7CAE8126C41DA90021A438 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75CB52DC5BB6CA695D273250 /* Pods-The Games (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -489,6 +590,7 @@
 		};
 		7A7CAE8226C41DA90021A438 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 051D30D4A367B2B19FFC4964 /* Pods-The Games (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -512,6 +614,7 @@
 		};
 		7A7CAE8426C41DA90021A438 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FBE718AFF4D9771F189A6F2 /* Pods-The Games (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -536,6 +639,7 @@
 		};
 		7A7CAE8526C41DA90021A438 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24E01772C0A55091EB788BAB /* Pods-The Games (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
