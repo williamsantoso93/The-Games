@@ -20,10 +20,18 @@ enum NetworkError: Error {
 class Networking {
     static let shared = Networking()
     
+    let baseAPI = "https://api.rawg.io/api"
     let apiKey = "e07d0723795c4dfc8130cbcaf6083be6"
     
-    static func getData<T : Codable>(from urlString: String, completion: @escaping ((Result<T, NetworkError>), URLResponse?) -> Void) {
-        guard let url = URL(string: urlString) else {
+    func getData<T : Codable>(from urlString: String, queryItems: [URLQueryItem]? = nil, completion: @escaping ((Result<T, NetworkError>), URLResponse?) -> Void) {
+        var components = URLComponents(string: urlString)!
+        components.queryItems = []
+        if let queryItems = queryItems {
+            components.queryItems = queryItems
+        }
+        components.queryItems?.append(URLQueryItem(name: "key", value: apiKey))
+        
+        guard let url = components.url else {
             return completion(.failure(.badUrl), nil)
         }
         

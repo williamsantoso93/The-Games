@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CardView: View {
-    var game: gameData
+    var game: GameData
     var genres: String {
         if let genres = game.genres {
             if !genres.isEmpty {
@@ -40,6 +40,7 @@ struct CardView: View {
                 .indicator(.activity)
                 .aspectRatio(contentMode: .fill)
                 .frame(minWidth: 0)
+                .frame(height: 250)
             
             VStack {
                 Spacer()
@@ -80,8 +81,8 @@ struct CardView: View {
                 LinearGradient(gradient: Gradient(colors: [.clear, .clear, .black.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
             )
         }
-        .frame(height: 250)
         .background(Color.gray)
+        .frame(height: 250)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
@@ -89,7 +90,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         HStack {
-            CardView(game: .init(id: 0, name: "GTA V", released: "2013-09-17", backgroundImage: "https://media.rawg.io/media/games/84d/84da2ac3fdfc6507807a1808595afb12.jp", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(id: 1, name: "PC")], genres: [.init(id: 1, name: "Action"),.init(id: 1, name: "Action2"),.init(id: 1, name: "Action1")]))
+            CardView(game: .init(id: 0, name: "portal", released: "2013-09-17", backgroundImage: "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(id: 1, name: "PC")], genres: [.init(id: 1, name: "Action"),.init(id: 1, name: "Action2"),.init(id: 1, name: "Action1")]))
         }
         .padding()
     }

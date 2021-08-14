@@ -8,10 +8,10 @@
 import Foundation
 
 // MARK: - ListGames
-struct ListGames: Codable {
+struct DataResult: Codable {
     let next: String?
     let previous: String?
-    let results: [gameData]?
+    let results: [GameData]?
     
     enum CodingKeys: String, CodingKey {
         case next, previous, results
@@ -20,7 +20,7 @@ struct ListGames: Codable {
 
 
 // MARK: - Result
-struct gameData: Codable, Identifiable {
+struct GameData: Codable, Identifiable {
     let id: Int
     let name: String
     let released: String

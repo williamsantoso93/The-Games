@@ -6,24 +6,31 @@
 //
 
 import SwiftUI
+import SwiftUIX
 
 struct ContentView: View {
-    let listGames = Bundle.main.decode(ListGames.self, from: "listGames.json")
-    @State private var iHello: Int = 0
+    let listGames = Bundle.main.decode(DataResult.self, from: "listGames.json")
+    @StateObject var viewModel = HomeViewModel()
+    
     var body: some View {
         NavigationView {
             Group {
-                if let results = listGames.results {
-                    ScrollView {
-                        LazyVStack {
-                            ForEach(results) { game in
-                                CardView(game: game)
+                if !viewModel.gamesData.isEmpty {
+                    VStack(spacing: 0.0) {
+                        ScrollView {
+                            LazyVStack {
+                                ForEach(viewModel.gamesData) { game in
+                                    CardView(game: game)
+                                        .onAppear {
+                                            viewModel.loadMoreData(currentGamesData: game)
+                                        }
+                                }
                             }
+                            .padding()
                         }
-                        .padding()
                     }
                 } else {
-                    VStack {
+                    VStack(spacing: 16.0) {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
                         
@@ -32,9 +39,18 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("The Games")
+            .navigationSearchBar {
+                SearchBar("Search Games", text: $viewModel.searchText, onCommit:  {
+                    viewModel.searchList()
+                })
+                .onCancel {
+                    viewModel.clearSearch()
+                }
+                .searchBarStyle(.default)
+            }
             .navigationBarItems(trailing:
                                     Button(action: {
-                                        
+                                        viewModel.loadNewList()
                                     }) {
                                         Text("Profile")
                                     }
