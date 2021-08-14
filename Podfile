@@ -6,6 +6,9 @@ target 'The Games (iOS)' do
   use_frameworks!
 
   # Pods for The Games (iOS)
+  
+  pod 'SDWebImageSwiftUI'
+  pod 'SwiftLint'
 
 end
 
@@ -15,7 +18,7 @@ target 'The Games (macOS)' do
 
   # Pods for The Games (macOS)
 
-  pod 'SwiftLint'
   pod 'SDWebImageSwiftUI'
+  pod 'SwiftLint'
 
 end

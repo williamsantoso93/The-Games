@@ -8,9 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var iHello: Int = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            ScrollView {
+                HStack {
+                    CardView()
+                    CardView()
+                }
+                .padding()
+            }
+            .navigationTitle("The Games")
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                                        
+                                    }) {
+                                        Text("Button")
+                                    }
+            )
+            
+        }
+    }
+    
+    func name() {
+        print("hello world")
     }
 }
 
