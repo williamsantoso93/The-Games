@@ -13,8 +13,6 @@
 		7A1631A426C56E1E00161134 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1631A326C56E1E00161134 /* CardView.swift */; };
 		7A3D954526C4B2B700EFB7AE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3D954426C4B2B700EFB7AE /* Networking.swift */; };
 		7A3D954626C4B2B700EFB7AE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3D954426C4B2B700EFB7AE /* Networking.swift */; };
-		7A545EE326C578F600290FED /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545EE226C578F600290FED /* TagView.swift */; };
-		7A545EE426C578F600290FED /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A545EE226C578F600290FED /* TagView.swift */; };
 		7A7CAE7826C41DA90021A438 /* The_GamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CAE4F26C41DA70021A438 /* The_GamesApp.swift */; };
 		7A7CAE7926C41DA90021A438 /* The_GamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CAE4F26C41DA70021A438 /* The_GamesApp.swift */; };
 		7A7CAE7A26C41DA90021A438 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7CAE5026C41DA70021A438 /* ContentView.swift */; };
@@ -23,6 +21,8 @@
 		7A7CAE7D26C41DA90021A438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A7CAE5126C41DA90021A438 /* Assets.xcassets */; };
 		7A7EFB3A26C7E9B9008F581C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7EFB3926C7E9B9008F581C /* Extension.swift */; };
 		7A7EFB3B26C7E9B9008F581C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7EFB3926C7E9B9008F581C /* Extension.swift */; };
+		7A7EFB4026C7ECDE008F581C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7EFB3F26C7ECDE008F581C /* Model.swift */; };
+		7A7EFB4126C7ECDE008F581C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7EFB3F26C7ECDE008F581C /* Model.swift */; };
 		DF0F7870FE61CF5C86AD2E9C /* Pods_The_Games__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		7A03DC5E26C6AE9E00DDD132 /* listGames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = listGames.json; sourceTree = "<group>"; };
 		7A1631A326C56E1E00161134 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7A3D954426C4B2B700EFB7AE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		7A545EE226C578F600290FED /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		7A7CAE4F26C41DA70021A438 /* The_GamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_GamesApp.swift; sourceTree = "<group>"; };
 		7A7CAE5026C41DA70021A438 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7A7CAE5126C41DA90021A438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		7A7CAE6626C41DA90021A438 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7CAE7126C41DA90021A438 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7EFB3926C7E9B9008F581C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7A7EFB3F26C7ECDE008F581C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Games__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,12 +137,11 @@
 			isa = PBXGroup;
 			children = (
 				7A7CAE4F26C41DA70021A438 /* The_GamesApp.swift */,
-				7A7CAE5026C41DA70021A438 /* ContentView.swift */,
-				7A1631A326C56E1E00161134 /* CardView.swift */,
-				7A7EFB3926C7E9B9008F581C /* Extension.swift */,
+				7A7EFB4426C80116008F581C /* Resources */,
+				7A7EFB4226C800FC008F581C /* Model */,
+				7A7EFB4526C8012E008F581C /* View Model */,
+				7A7EFB4326C8010E008F581C /* View */,
 				7A03DC5E26C6AE9E00DDD132 /* listGames.json */,
-				7A545EE226C578F600290FED /* TagView.swift */,
-				7A3D954426C4B2B700EFB7AE /* Networking.swift */,
 				7A7CAE5126C41DA90021A438 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -174,6 +173,39 @@
 				7A7CAE6126C41DA90021A438 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		7A7EFB4226C800FC008F581C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A7EFB3F26C7ECDE008F581C /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A7EFB4326C8010E008F581C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A7CAE5026C41DA70021A438 /* ContentView.swift */,
+				7A1631A326C56E1E00161134 /* CardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A7EFB4426C80116008F581C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A7EFB3926C7E9B9008F581C /* Extension.swift */,
+				7A3D954426C4B2B700EFB7AE /* Networking.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7A7EFB4526C8012E008F581C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,8 +490,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7EFB4026C7ECDE008F581C /* Model.swift in Sources */,
 				7A3D954526C4B2B700EFB7AE /* Networking.swift in Sources */,
-				7A545EE326C578F600290FED /* TagView.swift in Sources */,
 				7A7EFB3A26C7E9B9008F581C /* Extension.swift in Sources */,
 				7A7CAE7A26C41DA90021A438 /* ContentView.swift in Sources */,
 				7A1631A426C56E1E00161134 /* CardView.swift in Sources */,
@@ -474,8 +506,8 @@
 				7A3D954626C4B2B700EFB7AE /* Networking.swift in Sources */,
 				7A7CAE7B26C41DA90021A438 /* ContentView.swift in Sources */,
 				7A7EFB3B26C7E9B9008F581C /* Extension.swift in Sources */,
+				7A7EFB4126C7ECDE008F581C /* Model.swift in Sources */,
 				7A7CAE7926C41DA90021A438 /* The_GamesApp.swift in Sources */,
-				7A545EE426C578F600290FED /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
