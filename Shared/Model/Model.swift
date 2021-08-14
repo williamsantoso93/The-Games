@@ -49,3 +49,31 @@ struct Item: Codable, Identifiable {
         case id, name
     }
 }
+
+// MARK: - DetailGame
+struct DetailGame: Codable {
+    let id: Int
+    let name: String
+    let released: String
+    let backgroundImage: String?
+    let rating: Double?
+    let ratingTop: Int?
+    let parentPlatforms: [Item]?
+    let developers: [Item]?
+    let genres: [Item]?
+    let publishers: [Item]?
+    let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case released
+        case backgroundImage = "background_image"
+        case rating
+        case ratingTop = "rating_top"
+        case parentPlatforms = "parent_platforms"
+        case developers
+        case genres
+        case publishers
+        case description = "description_raw"
+    }
+}
