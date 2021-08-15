@@ -18,12 +18,16 @@ struct ContentView: View {
                 if !viewModel.gamesData.isEmpty {
                     VStack(spacing: 0.0) {
                         ScrollView {
-                            LazyVStack {
+                            LazyVStack(spacing: 16) {
                                 ForEach(viewModel.gamesData) { game in
-                                    CardView(game: game)
-                                        .onAppear {
-                                            viewModel.loadMoreData(currentGamesData: game)
-                                        }
+                                    NavigationLink(
+                                        destination: DetailScreen(gameID: game.id),
+                                        label: {
+                                            CardView(game: game)
+                                                .onAppear {
+                                                    viewModel.loadMoreData(currentGamesData: game)
+                                                }
+                                        })
                                 }
                             }
                             .padding()
@@ -49,17 +53,13 @@ struct ContentView: View {
                 .searchBarStyle(.default)
             }
             .navigationBarItems(trailing:
-                                    Button(action: {
-                                        viewModel.loadNewList()
-                                    }) {
-                                        Text("Profile")
-                                    }
+                                    NavigationLink(
+                                        destination: ProfileScreen(),
+                                        label: {
+                                            Image(systemName: "person.circle.fill")
+                                        })
             )
         }
-    }
-    
-    func name() {
-        print("hello world")
     }
 }
 

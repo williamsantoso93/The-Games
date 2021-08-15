@@ -9,7 +9,7 @@ import Foundation
 
 class DetailViewModel: ObservableObject {
     @Published var game: DetailGame?
-    @Published var gameID: String?
+    @Published var gameID: Int?
     @Published var isLoading = false
     
     func getGameDetail() {

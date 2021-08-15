@@ -20,6 +20,7 @@ struct CardView: View {
                 .resizable()
                 .placeholder{
                     Image(systemName: "photo")
+                        .foregroundColor(.black)
                         .font(.title)
                 }
                 .indicator(.activity)
@@ -75,7 +76,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         HStack {
-            CardView(game: .init(id: 0, name: "portal", released: "2013-09-17", backgroundImage: "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(id: 1, name: "PC")], genres: [.init(id: 1, name: "Action"),.init(id: 1, name: "Action2"),.init(id: 1, name: "Action1")]))
+            CardView(game: .init(id: 0, name: "portal", released: "2013-09-17", backgroundImage: "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jp", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(id: 1, name: "PC")], genres: [.init(id: 1, name: "Action"),.init(id: 1, name: "Action2"),.init(id: 1, name: "Action1")]))
         }
         .padding()
     }
