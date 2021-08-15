@@ -58,7 +58,7 @@ struct DetailGame: Codable {
     let backgroundImage: String?
     let rating: Double?
     let ratingTop: Int?
-    let parentPlatforms: [Item]?
+    let parentPlatforms: [ParentPlatform]?
     let developers: [Item]?
     let genres: [Item]?
     let publishers: [Item]?
@@ -76,4 +76,9 @@ struct DetailGame: Codable {
         case publishers
         case description = "description_raw"
     }
+}
+
+// MARK: - ParentPlatform
+struct ParentPlatform: Codable {
+    let platform: Item
 }

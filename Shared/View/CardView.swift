@@ -11,24 +11,9 @@ import SDWebImageSwiftUI
 struct CardView: View {
     var game: GameData
     var genres: String {
-        if let genres = game.genres {
-            if !genres.isEmpty {
-                if genres.count == 1 {
-                    return genres.first?.name ?? ""
-                } else {
-                    var genresName = [String]()
-                    
-                    for genre in genres {
-                        genresName.append(genre.name ?? "")
-                    }
-                    
-                    return genresName.joined(separator: ", ")
-                }
-            }
-        }
-        
-        return ""
+        joinedItems(game.genres)
     }
+    
     var body: some View {
         ZStack {
             WebImage(url: URL(string: game.backgroundImage ?? ""))
@@ -57,7 +42,7 @@ struct CardView: View {
                                 .fontWeight(.medium)
                         }
                         
-                        Spacer()
+                        Spacer(minLength: 0)
                         
                         
                         HStack {
@@ -96,3 +81,22 @@ struct CardView_Previews: PreviewProvider {
     }
 }
 
+func joinedItems(_ items: [Item]?) -> String {
+    if let items = items {
+        if !items.isEmpty {
+            if items.count == 1 {
+                return items.first?.name ?? ""
+            } else {
+                var itemName = [String]()
+                
+                for item in items {
+                    itemName.append(item.name ?? "")
+                }
+                
+                return itemName.joined(separator: ", ")
+            }
+        }
+    }
+    
+    return ""
+}
