@@ -32,6 +32,8 @@
 		7A88F5A126C96433007A46B6 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88F59F26C96433007A46B6 /* ProfileScreen.swift */; };
 		7A88F5A326C96765007A46B6 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88F5A226C96765007A46B6 /* DetailScreen.swift */; };
 		7A88F5A426C96765007A46B6 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88F5A226C96765007A46B6 /* DetailScreen.swift */; };
+		7A88F5A626C96F7B007A46B6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88F5A526C96F7B007A46B6 /* DetailViewModel.swift */; };
+		7A88F5A726C96F7B007A46B6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88F5A526C96F7B007A46B6 /* DetailViewModel.swift */; };
 		DF0F7870FE61CF5C86AD2E9C /* Pods_The_Games__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,7 @@
 		7A7EFB5626C81A3A008F581C /* DetailGame.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DetailGame.json; sourceTree = "<group>"; };
 		7A88F59F26C96433007A46B6 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		7A88F5A226C96765007A46B6 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		7A88F5A526C96F7B007A46B6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Games__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -222,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				7A7EFB4626C801D5008F581C /* HomeViewModel.swift */,
+				7A88F5A526C96F7B007A46B6 /* DetailViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -519,6 +523,7 @@
 				7A7EFB4026C7ECDE008F581C /* Model.swift in Sources */,
 				7A3D954526C4B2B700EFB7AE /* Networking.swift in Sources */,
 				7A7EFB4726C801D5008F581C /* HomeViewModel.swift in Sources */,
+				7A88F5A626C96F7B007A46B6 /* DetailViewModel.swift in Sources */,
 				7A7EFB3A26C7E9B9008F581C /* Extension.swift in Sources */,
 				7A7CAE7A26C41DA90021A438 /* ContentView.swift in Sources */,
 				7A1631A426C56E1E00161134 /* CardView.swift in Sources */,
@@ -536,6 +541,7 @@
 				7A3D954626C4B2B700EFB7AE /* Networking.swift in Sources */,
 				7A88F5A126C96433007A46B6 /* ProfileScreen.swift in Sources */,
 				7A7EFB4826C801D5008F581C /* HomeViewModel.swift in Sources */,
+				7A88F5A726C96F7B007A46B6 /* DetailViewModel.swift in Sources */,
 				7A7CAE7B26C41DA90021A438 /* ContentView.swift in Sources */,
 				7A7EFB3B26C7E9B9008F581C /* Extension.swift in Sources */,
 				7A7EFB4126C7ECDE008F581C /* Model.swift in Sources */,
