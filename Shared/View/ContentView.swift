@@ -9,9 +9,7 @@ import SwiftUI
 import SwiftUIX
 
 struct ContentView: View {
-    let listGames = Bundle.main.decode(DataResult.self, from: "listGames.json")
     @StateObject var viewModel = HomeViewModel()
-    
     var body: some View {
         NavigationView {
             Group {
@@ -37,14 +35,13 @@ struct ContentView: View {
                     VStack(spacing: 16.0) {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
-                        
                         Text("Loading...")
                     }
                 }
             }
             .navigationTitle("The Games")
             .navigationSearchBar {
-                SearchBar("Search Games", text: $viewModel.searchText, onCommit:  {
+                SearchBar("Search Games", text: $viewModel.searchText, onCommit: {
                     viewModel.searchList()
                 })
                 .onCancel {
@@ -57,6 +54,7 @@ struct ContentView: View {
                                         destination: ProfileScreen(),
                                         label: {
                                             Image(systemName: "person.circle.fill")
+                                                .font(.title)
                                         })
             )
         }

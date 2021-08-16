@@ -10,13 +10,10 @@ import Foundation
 class HomeViewModel: ObservableObject {
     @Published var dataResult: DataResult?
     @Published var gamesData: [GameData] = []
-    
     @Published var searchText = ""
-    
     init() {
         loadNewList()
     }
-    
     func loadNewList() {
         gamesData.removeAll()
         getListGames { data in
@@ -26,19 +23,15 @@ class HomeViewModel: ObservableObject {
             }
         }
     }
-    
-    
     func clearSearch() {
         searchText = ""
         loadNewList()
     }
-    
     func searchList() {
         if !searchText.isEmpty {
             loadNewList()
         }
     }
-    
     func getListGames(nextPage: String? = nil, completion: @escaping (DataResult) -> Void) {
         var queryItems: [URLQueryItem]? = []
         var urlString = ""
@@ -50,10 +43,8 @@ class HomeViewModel: ObservableObject {
                 queryItems?.append(.init(name: "search", value: searchText))
             }
         }
-        
         guard !urlString.isEmpty else { return }
-        
-        Networking.shared.getData(from: urlString, queryItems: queryItems) { (result: Result<DataResult, NetworkError>, response) in
+        Networking.shared.getData(from: urlString, queryItems: queryItems) { (result: Result<DataResult, NetworkError>, _) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data) :
@@ -64,14 +55,10 @@ class HomeViewModel: ObservableObject {
             }
         }
     }
-    
     func loadMoreData(currentGamesData: GameData) {
         guard let next = dataResult?.next else { return }
-        
         guard !gamesData.isEmpty else { return }
-        
         let secondLastData = gamesData[gamesData.count - 2]
-        
         if currentGamesData.id == secondLastData.id {
             getListGames(nextPage: next) { data in
                 self.dataResult = data

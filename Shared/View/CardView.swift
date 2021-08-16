@@ -13,12 +13,11 @@ struct CardView: View {
     var genres: String {
         joinedItems(game.genres)
     }
-    
     var body: some View {
         ZStack {
             WebImage(url: URL(string: game.backgroundImage ?? ""))
                 .resizable()
-                .placeholder{
+                .placeholder {
                     Image(systemName: "photo")
                         .foregroundColor(.black)
                         .font(.title)
@@ -27,34 +26,26 @@ struct CardView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(minWidth: 0)
                 .frame(height: 250)
-            
             VStack {
                 Spacer()
-                
                 VStack(alignment: .leading, spacing: 2) {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 8) {
                             Text(game.name)
                                 .font(.title3)
                                 .fontWeight(.semibold)
-                            
                             Text(game.released)
                                 .font(.body)
                                 .fontWeight(.medium)
                         }
-                        
                         Spacer(minLength: 0)
-                        
-                        
                         HStack {
                             Image(systemName: "star.fill")
-                            
                             Text("\(String(format: "%.2f", game.rating ?? 0))")
                                 .fontWeight(.medium)
                         }
                         .font(.body)
                     }
-                    
                     if !genres.isEmpty {
                         Text(genres)
                             .font(.caption)
@@ -75,10 +66,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        HStack {
-            CardView(game: .init(id: 0, name: "portal", released: "2013-09-17", backgroundImage: "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jp", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(id: 1, name: "PC")], genres: [.init(id: 1, name: "Action"),.init(id: 1, name: "Action2"),.init(id: 1, name: "Action1")]))
-        }
-        .padding()
+        CardView(game: .init(id: 0, name: "", released: "", backgroundImage: "", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(id: 1, name: "")], genres: [.init(id: 1, name: ""),.init(id: 1, name: ""),.init(id: 1, name: "")]))
     }
 }
 
@@ -89,15 +77,12 @@ func joinedItems(_ items: [Item]?) -> String {
                 return items.first?.name ?? ""
             } else {
                 var itemName = [String]()
-                
                 for item in items {
                     itemName.append(item.name ?? "")
                 }
-                
                 return itemName.joined(separator: ", ")
             }
         }
     }
-    
     return ""
 }

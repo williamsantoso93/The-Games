@@ -11,13 +11,11 @@ class DetailViewModel: ObservableObject {
     @Published var game: DetailGame?
     @Published var gameID: Int?
     @Published var isLoading = false
-    
     func getGameDetail() {
         guard let gameID = gameID else { return }
         isLoading = true
-        
         let urlString = Networking.shared.baseAPI + "/games/\(gameID)"
-        Networking.shared.getData(from: urlString) { (result: Result<DetailGame, NetworkError>, response) in
+        Networking.shared.getData(from: urlString) { (result: Result<DetailGame, NetworkError>, _) in
             DispatchQueue.main.async {
                 self.isLoading = false
                 switch result {

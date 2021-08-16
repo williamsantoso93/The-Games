@@ -12,10 +12,9 @@ struct DetailScreen: View {
     var gameID: Int
     let columns: [GridItem] = [
         GridItem(.flexible()),
-        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
     @StateObject var viewModel = DetailViewModel()
-    
     var body: some View {
         Group {
             if let game = viewModel.game {
@@ -23,7 +22,7 @@ struct DetailScreen: View {
                     VStack {
                         WebImage(url: URL(string: game.backgroundImage ?? ""))
                             .resizable()
-                            .placeholder{
+                            .placeholder {
                                 Image(systemName: "photo")
                                     .font(.title)
                             }
@@ -32,51 +31,41 @@ struct DetailScreen: View {
                             .frame(minWidth: 0)
                             .frame(height: 225)
                             .clipped()
-                        
                         VStack(alignment: .leading, spacing: 16) {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text(game.name)
                                         .bold()
                                         .font(.title)
-                                    
                                     Text(game.released)
                                         .font(.body)
                                 }
-                                
                                 Spacer(minLength: 0)
-                                
                                 VStack(spacing: 10.0) {
                                     Image(systemName: "star.fill")
                                         .imageScale(.large)
-                                    
                                     Text("\(String(format: "%.2f", game.rating ?? 0))")
                                         .fontWeight(.medium)
                                         .font(.subheadline)
                                 }
                             }
-                            
                             Text(game.description)
-                            
                             LazyVGrid(columns: columns, alignment: .leading, spacing: 10) {
                                 if let genres = game.genres {
                                     if !genres.isEmpty {
                                         SectionsDetailView(header: "genres", items: genres)
                                     }
                                 }
-                                
                                 if let platfroms = game.parentPlatforms {
                                     if !platfroms.isEmpty {
                                         PlatfromsDetailView(header: "platfroms", items: platfroms)
                                     }
                                 }
-                                
                                 if let developers = game.developers {
                                     if !developers.isEmpty {
                                         SectionsDetailView(header: "developers", items: developers)
                                     }
                                 }
-                                
                                 if let publishers = game.publishers {
                                     if !publishers.isEmpty {
                                         SectionsDetailView(header: "publishers", items: publishers)
@@ -88,12 +77,10 @@ struct DetailScreen: View {
                     }
                     .padding(.bottom, 16)
                 }
-            }
-            else {
+            } else {
                 VStack(spacing: 16.0) {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
-                    
                     Text("Loading...")
                 }
             }
@@ -116,7 +103,6 @@ struct DetailScreen_Previews: PreviewProvider {
 struct SectionsDetailView: View {
     var header: String
     var items: [Item]
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(header.capitalized)
@@ -136,18 +122,14 @@ struct PlatfromsDetailView: View {
                 return items.first?.platform.name ?? ""
             } else {
                 var platfromName = [String]()
-                
                 for item in items {
                     platfromName.append(item.platform.name ?? "")
                 }
-                
                 return platfromName.joined(separator: ", ")
             }
         }
-        
         return ""
     }
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(header.capitalized)

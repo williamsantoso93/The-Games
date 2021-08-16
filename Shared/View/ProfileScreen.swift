@@ -15,7 +15,6 @@ struct ProfileScreen: View {
                 Image("profile")
                     .frame(height: 125)
                     .clipShape(Circle())
-                
                 Text("William Santoso")
                     .bold()
                     .font(.title)
@@ -43,7 +42,6 @@ struct ProfileScreen: View {
         .padding()
         .navigationTitle("Profile")
     }
-    
     func goToURL(_ urlString: String) {
         guard let url = URL(string: urlString) else { return }
         openURL(url)
@@ -53,15 +51,13 @@ struct ProfileScreen: View {
 struct ProfileScreen_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        ProfileScreen()
-//            .preferredColorScheme(.dark)
+            ProfileScreen()
         }
     }
 }
 
 struct SocialMediaIcon: View {
     var iconName: String
-    
     var body: some View {
         Image(iconName)
             .resizable()

@@ -12,12 +12,10 @@ struct DataResult: Codable {
     let next: String?
     let previous: String?
     let results: [GameData]?
-    
     enum CodingKeys: String, CodingKey {
         case next, previous, results
     }
 }
-
 
 // MARK: - Result
 struct GameData: Codable, Identifiable {
@@ -29,7 +27,6 @@ struct GameData: Codable, Identifiable {
     let ratingTop: Int?
     let parentPlatforms: [Item]?
     let genres: [Item]?
-    
     enum CodingKeys: String, CodingKey {
         case id, name, released
         case backgroundImage = "background_image"
@@ -44,7 +41,6 @@ struct GameData: Codable, Identifiable {
 struct Item: Codable, Identifiable {
     let id: Int?
     let name: String?
-    
     enum CodingKeys: String, CodingKey {
         case id, name
     }
@@ -63,7 +59,6 @@ struct DetailGame: Codable {
     let genres: [Item]?
     let publishers: [Item]?
     let description: String
-    
     enum CodingKeys: String, CodingKey {
         case id, name
         case released

@@ -120,11 +120,11 @@ extension PlatformView {
     /// - Returns: The hosting view.
     func findHostingView() -> PlatformView? {
         var superview = self.superview
-        while let s = superview {
-            if NSStringFromClass(type(of: s)).contains("HostingView") {
-                return s
+        while let superV = superview {
+            if NSStringFromClass(type(of: superV)).contains("HostingView") {
+                return superV
             }
-            superview = s.superview
+            superview = superV.superview
         }
         return nil
     }

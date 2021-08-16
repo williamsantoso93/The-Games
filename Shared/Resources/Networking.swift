@@ -19,31 +19,25 @@ enum NetworkError: Error {
 
 class Networking {
     static let shared = Networking()
-    
     let baseAPI = "https://api.rawg.io/api"
     let apiKey = "e07d0723795c4dfc8130cbcaf6083be6"
-    
-    func getData<T : Codable>(from urlString: String, queryItems: [URLQueryItem]? = nil, completion: @escaping ((Result<T, NetworkError>), URLResponse?) -> Void) {
+    func getData<T: Codable> (from urlString: String, queryItems: [URLQueryItem]? = nil, completion: @escaping ((Result<T, NetworkError>), URLResponse?) -> Void) {
         var components = URLComponents(string: urlString)!
         components.queryItems = []
         if let queryItems = queryItems {
             components.queryItems = queryItems
         }
         components.queryItems?.append(URLQueryItem(name: "key", value: apiKey))
-        
         guard let url = components.url else {
             return completion(.failure(.badUrl), nil)
         }
-        
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 print(urlString)
                 return completion(.failure(.noData), response)
             }
-            
             guard let decoded = try? JSONDecoder().decode(T.self, from: data) else {
                 print(urlString)
                 print(String(data: data, encoding: .utf8) ?? "no data")
