@@ -9,6 +9,8 @@ Assumption :
 * User only use iPhone
 * UI created by using SwiftUI (SwiftLint works differently when using SwiftUI)
 * SwiftLint error mostly in pods
+* Use userDefaults for name & social media
+* Use coreData for favorite
 
 
 Used third party library (cocoapods) :

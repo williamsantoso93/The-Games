@@ -21,7 +21,6 @@ struct EditProfileScreen: View {
                 TitleTextField(title: "Github", text: $github, placeHolder: "https://github.com/williamsantoso93")
                 TitleTextField(title: "LinkedIn", text: $linkedin, placeHolder: "https://www.linkedin.com/in/williamsantoso93/")
                 TitleTextField(title: "Instagram", text: $instagram, placeHolder: "https://www.instagram.com/william.santoso93/")
-//                TitleTextField(title: "Name", text: $name, placeHolder: "https://www.instagram.com/william.santoso93/")
                 Spacer()
             }
             .padding()

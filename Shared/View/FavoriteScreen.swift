@@ -10,20 +10,29 @@ import CoreData
 import SwiftUIX
 
 struct FavoriteScreen: View {
-    @StateObject var viewModel = FavoriteViewModel()
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Favorite.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Favorite.timestamp, ascending: true)]) var results: FetchedResults<Favorite>
+    @State var gamesData: [GameData] = []
+    @State var searchText = ""
+    var filterGamesData: [GameData] {
+        if searchText.isEmpty {
+            return gamesData
+        }
+        return gamesData.filter {
+            $0.name.localizedStandardContains(searchText.lowercased())
+        }
+    }
     var body: some View {
         Group {
-            if !viewModel.gamesData.isEmpty {
+            if !filterGamesData.isEmpty {
                 VStack(spacing: 0.0) {
                     ScrollView {
                         LazyVStack(spacing: 16) {
-                            ForEach(viewModel.gamesData.indices, id: \.self) { index in
+                            ForEach(filterGamesData.indices, id: \.self) { index in
                                 NavigationLink(
-                                    destination: DetailScreen(gameID: viewModel.gamesData[index].gameID),
+                                    destination: DetailScreen(gameID: filterGamesData[index].gameID),
                                     label: {
-                                        CardView(game: viewModel.gamesData[index])
+                                        CardView(game: filterGamesData[index])
                                     })
                             }
                         }
@@ -31,29 +40,17 @@ struct FavoriteScreen: View {
                     }
                 }
             } else {
-                VStack(spacing: 16.0) {
-                    if viewModel.isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                        Text("Loading...")
-                    } else {
-                        Text("No Favorite Games")
-                    }
-                }
+                Text("No Favorite Games")
             }
         }
         .navigationTitle("Favorite")
-//        .navigationBarItems(trailing:
-//                                Button(action: {
-//                                    let favorite = Favorite(context: moc)
-//                                    favorite.favoriteID = UUID()
-//                                    favorite.timestamp = Date()
-//                                    favorite.gameID = 1234
-//                                    PersistenceController.shared.save()
-//                                }) {
-//                                    Text("add")
-//                                }
-//        )
+        .navigationSearchBar {
+            SearchBar("Search Games", text: $searchText)
+            .onCancel {
+                searchText = ""
+            }
+            .searchBarStyle(.default)
+        }
         .onAppear {
             var temp: [GameData] = []
             for result in results {
@@ -64,7 +61,7 @@ struct FavoriteScreen: View {
                 let gameData: GameData = .init(gameID: Int(result.gameID), name: result.name ?? "-", released: result.released ?? "-", backgroundImage: result.backgroundImage, rating: result.rating, ratingTop: nil, parentPlatforms: nil, genres: genres)
                 temp.append(gameData)
             }
-            viewModel.gamesData = temp
+            gamesData = temp
         }
     }
 }

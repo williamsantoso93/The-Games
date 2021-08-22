@@ -39,8 +39,4 @@ struct PersistenceController {
         context.delete(object)
         save()
     }
-    
-    func getFavorite() {
-        
-    }
 }
