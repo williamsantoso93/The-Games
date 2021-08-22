@@ -1,7 +1,7 @@
 # The Games
 
 Assumption :
-* Tester have installed cocoapods and do ```pod install``` before running the proeject
+* Tester have installed cocoapods and do ```pod install``` before running the project
 * Tester have installed SPM before running the proeject
 * Open ```The Games.xcworkspace``` to run the project
 * Create in Xcode 12.5.1 and use iOS 14.5 as deployment

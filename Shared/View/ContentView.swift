@@ -17,13 +17,13 @@ struct ContentView: View {
                     VStack(spacing: 0.0) {
                         ScrollView {
                             LazyVStack(spacing: 16) {
-                                ForEach(viewModel.gamesData) { game in
+                                ForEach(viewModel.gamesData.indices, id: \.self) { index in
                                     NavigationLink(
-                                        destination: DetailScreen(gameID: game.id),
+                                        destination: DetailScreen(gameID: viewModel.gamesData[index].gameID),
                                         label: {
-                                            CardView(game: game)
+                                            CardView(game: viewModel.gamesData[index])
                                                 .onAppear {
-                                                    viewModel.loadMoreData(currentGamesData: game)
+                                                    viewModel.loadMoreData(currentGamesData: viewModel.gamesData[index])
                                                 }
                                         })
                                 }
@@ -50,12 +50,20 @@ struct ContentView: View {
                 .searchBarStyle(.default)
             }
             .navigationBarItems(trailing:
-                                    NavigationLink(
-                                        destination: ProfileScreen(),
-                                        label: {
-                                            Image(systemName: "person.circle.fill")
-                                                .font(.title)
-                                        })
+                                    HStack(spacing: 16.0) {
+                                        NavigationLink(
+                                            destination: ProfileScreen(),
+                                            label: {
+                                                Image(systemName: "heart.fill")
+                                                    .font(.title)
+                                            })
+                                        NavigationLink(
+                                            destination: ProfileScreen(),
+                                            label: {
+                                                Image(systemName: "person.circle.fill")
+                                                    .font(.title)
+                                            })
+                                    }
             )
         }
     }

@@ -66,7 +66,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(game: .init(id: 0, name: "", released: "", backgroundImage: "", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(id: 1, name: "")], genres: [.init(id: 1, name: ""),.init(id: 1, name: ""),.init(id: 1, name: "")]))
+        CardView(game: .init(gameID: 0, name: "", released: "", backgroundImage: "", rating: 4.48, ratingTop: 5, parentPlatforms: [.init(itemID: 1, name: "")], genres: [.init(itemID: 1, name: ""), .init(itemID: 1, name: ""), .init(itemID: 1, name: "")]))
     }
 }
 

@@ -18,8 +18,8 @@ struct DataResult: Codable {
 }
 
 // MARK: - Result
-struct GameData: Codable, Identifiable {
-    let id: Int
+struct GameData: Codable {
+    let gameID: Int
     let name: String
     let released: String
     let backgroundImage: String?
@@ -28,7 +28,8 @@ struct GameData: Codable, Identifiable {
     let parentPlatforms: [Item]?
     let genres: [Item]?
     enum CodingKeys: String, CodingKey {
-        case id, name, released
+        case gameID = "id"
+        case name, released
         case backgroundImage = "background_image"
         case rating
         case ratingTop = "rating_top"
@@ -38,17 +39,18 @@ struct GameData: Codable, Identifiable {
 }
 
 // MARK: - Platform
-struct Item: Codable, Identifiable {
-    let id: Int?
+struct Item: Codable {
+    let itemID: Int?
     let name: String?
     enum CodingKeys: String, CodingKey {
-        case id, name
+        case itemID = "id"
+        case name
     }
 }
 
 // MARK: - DetailGame
 struct DetailGame: Codable {
-    let id: Int
+    let detailID: Int
     let name: String
     let released: String
     let backgroundImage: String?
@@ -60,7 +62,8 @@ struct DetailGame: Codable {
     let publishers: [Item]?
     let description: String
     enum CodingKeys: String, CodingKey {
-        case id, name
+        case detailID = "id"
+        case name
         case released
         case backgroundImage = "background_image"
         case rating

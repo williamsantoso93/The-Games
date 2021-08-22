@@ -9,38 +9,62 @@ import SwiftUI
 
 struct ProfileScreen: View {
     @Environment(\.openURL) var openURL
+    @State var isEditProfileShown = false
+    @AppStorage("name") var name: String = "William Santoso"
+    @AppStorage("github") var github: String = "https://github.com/williamsantoso93"
+    @AppStorage("linkedin") var linkedin: String = "https://www.linkedin.com/in/williamsantoso93/"
+    @AppStorage("instagram") var instagram: String = "https://www.instagram.com/william.santoso93/"
     var body: some View {
         VStack(spacing: 40) {
             HStack {
-                Image("profile")
+                Image(systemName: "person.circle.fill")
+                    .resizable()
                     .frame(height: 125)
                     .clipShape(Circle())
-                Text("William Santoso")
+                Text(name)
                     .bold()
                     .font(.title)
-                    .lineLimit(1)
-                    .fixedSize(horizontal: true, vertical: false)
+                    .lineLimit(2)
+                    .width(UIScreen.main.bounds.width - 125 - 40)
+                    .fixedSize(horizontal: true, vertical: true)
+                Spacer(minLength: 0)
             }
             HStack(spacing: 40) {
-                Button(action: {
-                    goToURL("https://github.com/williamsantoso93")
-                }) {
-                    SocialMediaIcon(iconName: "github")
+                if !github.isEmpty {
+                    Button {
+                        goToURL(github)
+                    } label: {
+                        SocialMediaIcon(iconName: "github")
+                    }
                 }
-                Button(action: {
-                    goToURL("https://www.linkedin.com/in/williamsantoso93/")
-                }) {
-                    SocialMediaIcon(iconName: "linkedin")
+                if !linkedin.isEmpty {
+                    Button {
+                        goToURL(linkedin)
+                    } label: {
+                        SocialMediaIcon(iconName: "linkedin")
+                    }
                 }
-                Button(action: {
-                    goToURL("https://www.instagram.com/william.santoso93/")
-                }) {
-                    SocialMediaIcon(iconName: "instagram")
+                if !instagram.isEmpty {
+                    Button {
+                        goToURL(instagram)
+                    } label: {
+                        SocialMediaIcon(iconName: "instagram")
+                    }
                 }
             }
         }
         .padding()
         .navigationTitle("Profile")
+        .navigationBarItems(trailing:
+                                Button {
+                                    isEditProfileShown.toggle()
+                                } label: {
+                                    Text("Edit")
+                                }
+        )
+        .sheet(isPresented: $isEditProfileShown, content: {
+            EditProfileScreen(name: name, github: github, linkedin: linkedin, instagram: instagram)
+        })
     }
     func goToURL(_ urlString: String) {
         guard let url = URL(string: urlString) else { return }

@@ -90,6 +90,14 @@ struct DetailScreen: View {
             viewModel.getGameDetail()
         }
         .navigationTitle("Detail")
+        .navigationBarItems(trailing:
+                                Button {
+                                    
+                                } label: {
+                                    Image(systemName: "heart.fill")
+                                        .font(.title)
+                                }
+        )
     }
 }
 

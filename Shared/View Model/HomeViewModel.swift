@@ -59,7 +59,7 @@ class HomeViewModel: ObservableObject {
         guard let next = dataResult?.next else { return }
         guard !gamesData.isEmpty else { return }
         let secondLastData = gamesData[gamesData.count - 2]
-        if currentGamesData.id == secondLastData.id {
+        if currentGamesData.gameID == secondLastData.gameID {
             getListGames(nextPage: next) { data in
                 self.dataResult = data
                 if let results = data.results {
