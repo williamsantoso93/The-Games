@@ -9,7 +9,9 @@ import Foundation
 
 class FavoriteViewModel: ObservableObject {
     @Published var dataResult: DataResult?
-    @Published var gamesData: [GameData] = []
     @Published var searchText = ""
     @Published var isLoading = false
+    
+    @Published var favorites: [Favorite] = []
+    @Published var gamesData: [GameData] = []
 }

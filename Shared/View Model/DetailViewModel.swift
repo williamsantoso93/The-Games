@@ -5,7 +5,8 @@
 //  Created by William Santoso on 15/08/21.
 //
 
-import Foundation
+import SwiftUI
+import CoreData
 
 class DetailViewModel: ObservableObject {
     @Published var game: DetailGame?
@@ -26,5 +27,42 @@ class DetailViewModel: ObservableObject {
                 }
             }
         }
+    }
+    func addFavorite(_ moc: NSManagedObjectContext) {
+        if let game = game {
+            let favorite = Favorite(context: moc)
+            favorite.favoriteID = UUID()
+            favorite.timestamp = Date()
+            favorite.gameID = Int64(game.detailID)
+            favorite.name = game.name
+            favorite.rating = game.rating ?? 0
+            favorite.backgroundImage = game.backgroundImage
+            favorite.released = game.released
+            if let genresData = try? JSONEncoder().encode(game.genres) {
+                favorite.genres = String(data: genresData, encoding: .utf8)
+            }
+            PersistenceController.shared.save()
+        }
+    }
+    func deleteFavorite(_ moc: NSManagedObjectContext, _ results: FetchedResults<Favorite>) {
+        if let index = getIndex(results) {
+            let favorite = results[index]
+            moc.delete(favorite)
+        }
+    }
+    func isFavorite(results: FetchedResults<Favorite>) -> Bool {
+        if getIndex(results) != nil {
+            return true
+        }
+        return false
+    }
+    func getIndex(_ results: FetchedResults<Favorite>) -> Int? {
+        if let gameID = gameID {
+            let index = results.firstIndex {
+                $0.gameID == gameID
+            }
+            return index
+        }
+        return nil
     }
 }

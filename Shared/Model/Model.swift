@@ -19,14 +19,14 @@ struct DataResult: Codable {
 
 // MARK: - Result
 struct GameData: Codable {
-    let gameID: Int
-    let name: String
-    let released: String
-    let backgroundImage: String?
-    let rating: Double?
-    let ratingTop: Int?
-    let parentPlatforms: [Item]?
-    let genres: [Item]?
+    var gameID: Int
+    var name: String
+    var released: String
+    var backgroundImage: String?
+    var rating: Double?
+    var ratingTop: Int?
+    var parentPlatforms: [Item]?
+    var genres: [Item]?
     enum CodingKeys: String, CodingKey {
         case gameID = "id"
         case name, released

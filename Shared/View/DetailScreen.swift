@@ -7,14 +7,18 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import CoreData
 
 struct DetailScreen: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Favorite.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Favorite.timestamp, ascending: true)]) var results: FetchedResults<Favorite>
     var gameID: Int
     let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     @StateObject var viewModel = DetailViewModel()
+    @State var isFavorite = false
     var body: some View {
         Group {
             if let game = viewModel.game {
@@ -87,16 +91,24 @@ struct DetailScreen: View {
         }
         .onAppear {
             viewModel.gameID = gameID
+            isFavorite = viewModel.isFavorite(results: results)
             viewModel.getGameDetail()
         }
         .navigationTitle("Detail")
         .navigationBarItems(trailing:
                                 Button {
-                                    
+                                    if isFavorite {
+                                        viewModel.deleteFavorite(moc, results)
+                                        isFavorite = false
+                                    } else {
+                                        viewModel.addFavorite(moc)
+                                        isFavorite = true
+                                    }
                                 } label: {
-                                    Image(systemName: "heart.fill")
+                                    Image(systemName: "\(isFavorite ? "heart.fill" : "heart")")
                                         .font(.title)
                                 }
+                                .disabled(viewModel.isLoading)
         )
     }
 }

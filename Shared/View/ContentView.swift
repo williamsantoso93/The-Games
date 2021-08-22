@@ -52,7 +52,7 @@ struct ContentView: View {
             .navigationBarItems(trailing:
                                     HStack(spacing: 16.0) {
                                         NavigationLink(
-                                            destination: ProfileScreen(),
+                                            destination: FavoriteScreen(),
                                             label: {
                                                 Image(systemName: "heart.fill")
                                                     .font(.title)
