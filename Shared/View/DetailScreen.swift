@@ -82,10 +82,14 @@ struct DetailScreen: View {
                     .padding(.bottom, 16)
                 }
             } else {
-                VStack(spacing: 16.0) {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                    Text("Loading...")
+                if viewModel.isLoading {
+                    VStack(spacing: 16.0) {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                        Text("Loading...")
+                    }
+                } else {
+                    Text(viewModel.message)
                 }
             }
         }

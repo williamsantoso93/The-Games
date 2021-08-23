@@ -34,7 +34,7 @@ struct CardView: View {
                             Text(game.name)
                                 .font(.title3)
                                 .fontWeight(.semibold)
-                            Text(game.released)
+                            Text(game.released ?? "-")
                                 .font(.body)
                                 .fontWeight(.medium)
                         }

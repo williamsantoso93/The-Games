@@ -21,7 +21,7 @@ struct DataResult: Codable {
 struct GameData: Codable {
     var gameID: Int
     var name: String
-    var released: String
+    var released: String?
     var backgroundImage: String?
     var rating: Double?
     var ratingTop: Int?

@@ -35,12 +35,9 @@ class Networking {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
-                print(urlString)
                 return completion(.failure(.noData), response)
             }
             guard let decoded = try? JSONDecoder().decode(T.self, from: data) else {
-                print(urlString)
-                print(String(data: data, encoding: .utf8) ?? "no data")
                 return completion(.failure(.errorMessage(data.jsonToString())), response)
             }
             completion(.success(decoded), response)
