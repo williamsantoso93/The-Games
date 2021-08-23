@@ -14,13 +14,21 @@ struct ProfileScreen: View {
     @AppStorage("github") var github: String = "https://github.com/williamsantoso93"
     @AppStorage("linkedin") var linkedin: String = "https://www.linkedin.com/in/williamsantoso93/"
     @AppStorage("instagram") var instagram: String = "https://www.instagram.com/william.santoso93/"
+    @AppStorage("image") var imageData: Data?
     var body: some View {
         VStack(spacing: 40) {
             HStack {
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(height: 125)
-                    .clipShape(Circle())
+                if let uiimage = UIImage(data: imageData ?? Data()) {
+                    Image(uiImage: uiimage)
+                        .resizable()
+                        .frame(height: 125)
+                        .clipShape(Circle())
+                } else {
+                    Image("profile")
+                        .resizable()
+                        .frame(height: 125)
+                        .clipShape(Circle())
+                }
                 Text(name)
                     .bold()
                     .font(.title)
@@ -63,7 +71,7 @@ struct ProfileScreen: View {
                                 }
         )
         .sheet(isPresented: $isEditProfileShown, content: {
-            EditProfileScreen(name: name, github: github, linkedin: linkedin, instagram: instagram)
+            EditProfileScreen(name: name, github: github, linkedin: linkedin, instagram: instagram, imageData: imageData)
         })
     }
     func goToURL(_ urlString: String) {

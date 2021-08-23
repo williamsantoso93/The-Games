@@ -12,7 +12,7 @@ class DetailViewModel: ObservableObject {
     @Published var game: DetailGame?
     @Published var gameID: Int?
     @Published var isLoading = false
-    @Published var message = "no game data"
+    @Published var message = "Error please try again"
     func getGameDetail() {
         guard let gameID = gameID else { return }
         isLoading = true

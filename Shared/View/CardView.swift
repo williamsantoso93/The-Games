@@ -34,9 +34,11 @@ struct CardView: View {
                             Text(game.name)
                                 .font(.title3)
                                 .fontWeight(.semibold)
-                            Text(game.released ?? "-")
-                                .font(.body)
-                                .fontWeight(.medium)
+                            if let date = game.releasedDate {
+                                Text(date.dateToStringLong())
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                            }
                         }
                         Spacer(minLength: 0)
                         HStack {

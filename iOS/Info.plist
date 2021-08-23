@@ -46,5 +46,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app uses photo library for upload photos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app uses photo library for upload photos</string>
 </dict>
 </plist>

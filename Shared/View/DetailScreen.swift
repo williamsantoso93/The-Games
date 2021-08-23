@@ -41,8 +41,11 @@ struct DetailScreen: View {
                                     Text(game.name)
                                         .bold()
                                         .font(.title)
-                                    Text(game.released)
-                                        .font(.body)
+                                    if let date = game.releasedDate {
+                                        Text(date.dateToStringLong())
+                                            .font(.body)
+                                            .fontWeight(.medium)
+                                    }
                                 }
                                 Spacer(minLength: 0)
                                 VStack(spacing: 10.0) {

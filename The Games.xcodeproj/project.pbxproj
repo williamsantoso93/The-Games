@@ -35,6 +35,10 @@
 		7A88F5A626C96F7B007A46B6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88F5A526C96F7B007A46B6 /* DetailViewModel.swift */; };
 		7A88F5A726C96F7B007A46B6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A88F5A526C96F7B007A46B6 /* DetailViewModel.swift */; };
 		7AD6814626CA971F007746B4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7AD6814526CA971F007746B4 /* README.md */; };
+		7AF80A5E26D3D17600ECABEF /* RequestAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF80A5D26D3D17600ECABEF /* RequestAccess.swift */; };
+		7AF80A5F26D3D17600ECABEF /* RequestAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF80A5D26D3D17600ECABEF /* RequestAccess.swift */; };
+		7AF80A6126D3D1CE00ECABEF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF80A6026D3D1CE00ECABEF /* ImagePicker.swift */; };
+		7AF80A6226D3D1CE00ECABEF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF80A6026D3D1CE00ECABEF /* ImagePicker.swift */; };
 		DF0F7870FE61CF5C86AD2E9C /* Pods_The_Games__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,8 @@
 		7A88F5A226C96765007A46B6 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		7A88F5A526C96F7B007A46B6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		7AD6814526CA971F007746B4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7AF80A5D26D3D17600ECABEF /* RequestAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAccess.swift; sourceTree = "<group>"; };
+		7AF80A6026D3D1CE00ECABEF /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		7BB0EEF6DB69DB983E45DE8C /* Pods_The_Games__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Games__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -214,6 +220,7 @@
 				7A0E7E6926D258EB0025241E /* EditProfileScreen.swift */,
 				7A0E7E6A26D258EB0025241E /* FavoriteScreen.swift */,
 				7A1631A326C56E1E00161134 /* CardView.swift */,
+				7AF80A6026D3D1CE00ECABEF /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				7A0E7E7226D259540025241E /* Persistence.swift */,
 				7A7EFB3926C7E9B9008F581C /* Extension.swift */,
 				7A3D954426C4B2B700EFB7AE /* Networking.swift */,
+				7AF80A5D26D3D17600ECABEF /* RequestAccess.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -536,6 +544,8 @@
 				7A7CAE7A26C41DA90021A438 /* ContentView.swift in Sources */,
 				7A1631A426C56E1E00161134 /* CardView.swift in Sources */,
 				7A7CAE7826C41DA90021A438 /* TheGamesApp.swift in Sources */,
+				7AF80A5E26D3D17600ECABEF /* RequestAccess.swift in Sources */,
+				7AF80A6126D3D1CE00ECABEF /* ImagePicker.swift in Sources */,
 				7A88F5A026C96433007A46B6 /* ProfileScreen.swift in Sources */,
 				7A88F5A326C96765007A46B6 /* DetailScreen.swift in Sources */,
 			);
@@ -552,6 +562,8 @@
 				7A88F5A726C96F7B007A46B6 /* DetailViewModel.swift in Sources */,
 				7A7CAE7B26C41DA90021A438 /* ContentView.swift in Sources */,
 				7A7EFB3B26C7E9B9008F581C /* Extension.swift in Sources */,
+				7AF80A6226D3D1CE00ECABEF /* ImagePicker.swift in Sources */,
+				7AF80A5F26D3D17600ECABEF /* RequestAccess.swift in Sources */,
 				7A7EFB4126C7ECDE008F581C /* Model.swift in Sources */,
 				7A7CAE7926C41DA90021A438 /* TheGamesApp.swift in Sources */,
 			);

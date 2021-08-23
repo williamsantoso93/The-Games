@@ -12,7 +12,7 @@ class HomeViewModel: ObservableObject {
     @Published var gamesData: [GameData] = []
     @Published var searchText = ""
     @Published var isLoading = false
-    @Published var message = "no game data"
+    @Published var message = "No game data"
     init() {
         loadNewList()
     }

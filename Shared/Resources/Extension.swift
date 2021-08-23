@@ -12,3 +12,12 @@ extension Data {
         return String(data: self, encoding: .utf8) ?? "error encoding"
     }
 }
+
+extension Date {
+    func dateToStringLong() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        
+        return dateFormatter.string(from: self)
+    }
+}

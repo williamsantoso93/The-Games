@@ -22,6 +22,14 @@ struct GameData: Codable {
     var gameID: Int
     var name: String
     var released: String?
+    var releasedDate: Date? {
+        if let released = released {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.date(from: released)!
+        }
+        return nil
+    }
     var backgroundImage: String?
     var rating: Double?
     var ratingTop: Int?
@@ -52,7 +60,15 @@ struct Item: Codable {
 struct DetailGame: Codable {
     let detailID: Int
     let name: String
-    let released: String
+    let released: String?
+    var releasedDate: Date? {
+        if let released = released {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            return dateFormatter.date(from: released)!
+        }
+        return nil
+    }
     let backgroundImage: String?
     let rating: Double?
     let ratingTop: Int?
